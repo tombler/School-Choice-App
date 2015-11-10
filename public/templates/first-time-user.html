@@ -1,0 +1,63 @@
+<!-- Address -->
+
+  <div class="md-padding" ng-hide="startQuestions" ng-init="getStateAbbrevs()">
+    <div layout="row" layout-align="center" class="question-title">
+        <h1 class="md-title">Enter your address</h1>
+    </div>
+    <div layout="row" layout-align="center">
+      <md-input-container>
+        <label>Street Name</label>
+        <input ng-model="userAddress.street">
+      </md-input-container>
+
+      <md-input-container>
+        <label>City</label>
+        <input ng-model="userAddress.city">
+      </md-input-container>
+
+      <md-input-container>
+        <label>State</label>
+        <md-select ng-model="userAddress.state">
+          <md-option ng-repeat="state in stateNames" value="{{state.abbreviation}}">
+            {{state.abbreviation}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+      
+    </div>
+    <div layout="row" layout-align="center">
+        <button class="md-raised md-button md-ink-ripple" ng-click="skipAddress()"><span class="ng-scope">Skip</span><div class="md-ripple-container"></div></button>
+        <button class="md-raised md-primary md-button md-ink-ripple" ng-click="validateAddress()"><span class="ng-scope">Next</span><div class="md-ripple-container"></div></button>
+    </div>
+  </div>
+
+<!-- Questions -->
+
+<div class="md-padding" ng-show="startQuestions">
+    <div layout="row" layout-align="center" class="question-title">
+        <h1 class="md-title">{{thisQuestion.title}}</h1>
+    </div>
+    <div layout="row" layout-align="center" class="question-title">
+        <p class="">{{thisQuestion.value}}</h1>
+    </div>
+    <div layout="row" layout-align="center">
+        <div class="md-padding" ng-cloak="">
+          <fieldset class="standard">
+            <div layout="row" layout-wrap="">
+              <div flex="90">
+                <md-checkbox ng-repeat="option in thisQuestion.options" aria-label="Checkbox 1">
+                  {{option}}
+                </md-checkbox>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+    </div>
+    <div layout="row" layout-align="center">
+        <button class="md-raised md-button md-ink-ripple" ng-click="skipQuestion()"><span class="ng-scope">Skip</span><div class="md-ripple-container"></div></button>
+      <button class="md-raised md-primary md-button md-ink-ripple" ng-click="collectUserInfo()"><span class="ng-scope">Next</span><div class="md-ripple-container"></div></button>
+    </div>
+</div>
+
+
+

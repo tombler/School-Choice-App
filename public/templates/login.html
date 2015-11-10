@@ -1,0 +1,19 @@
+<div layout="column" ng-cloak="" class="">
+
+  <br>
+  <md-content layout-padding="" class="autoScroll">
+    <md-input-container class="md-block">
+      <!-- Use floating placeholder instead of label -->
+      <md-icon class="email"></md-icon>
+      <input ng-model="email" type="email" placeholder="Email" ng-required="true">
+    </md-input-container>
+    
+    <md-input-container class="md-block">
+      <!-- Use floating placeholder instead of label -->
+      <md-icon class="password"></md-icon>
+      <input ng-model="password" type="password" placeholder="Password" ng-required="true">
+    </md-input-container>
+    <md-button class="primary" ng-click="login()"> Log In </md-button>
+  </md-content>
+
+</div>
